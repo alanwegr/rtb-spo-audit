@@ -14,3 +14,8 @@ services:
       - "traefik.http.routers.spo.entrypoints=websecure"
       - "traefik.http.routers.spo.tls.certresolver=mytlschallenge"
       - "traefik.http.services.spo.loadbalancer.server.port=8501"
+
+networks:
+  default:
+    name: root_default
+    external: true
