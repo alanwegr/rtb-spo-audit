@@ -1,0 +1,12 @@
+{
+  "google.com": {"seller_type": "BOTH", "is_confidential": 0, "name": "Google AdX"},
+  "xandr.com": {"seller_type": "BOTH", "is_confidential": 0, "name": "Xandr"},
+  "rubiconproject.com": {"seller_type": "PUBLISHER", "is_confidential": 0, "name": "Magnite DV+"},
+  "pubmatic.com": {"seller_type": "PUBLISHER", "is_confidential": 0, "name": "PubMatic"},
+  "openx.com": {"seller_type": "PUBLISHER", "is_confidential": 0, "name": "OpenX"},
+  "criteo.com": {"seller_type": "BOTH", "is_confidential": 0, "name": "Criteo"},
+  "indexexchange.com": {"seller_type": "PUBLISHER", "is_confidential": 0, "name": "Index Exchange"},
+  "sovrn.com": {"seller_type": "PUBLISHER", "is_confidential": 0, "name": "Sovrn"},
+  "ssp-shifty.example": {"seller_type": "RESELLER", "is_confidential": 1, "name": "Shady Reseller LLC"},
+  "unknown-bidder.example": {"seller_type": "BOTH", "is_confidential": 1, "name": "Unverified SSP"}
+}
