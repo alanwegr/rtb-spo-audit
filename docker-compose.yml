@@ -2,15 +2,11 @@ services:
   spo-audit:
     build: .
     image: rtb-spo-audit
+    container_name: rtb-spo-audit
     ports:
-      - "8501:8501"
+      - "127.0.0.1:8501:8501"
     deploy:
       resources:
         limits:
           memory: 500M
-    read_only: true
-    tmpfs:
-      - /tmp
-    volumes:
-      - ./data:/app/data:ro
     restart: unless-stopped
