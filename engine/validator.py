@@ -75,6 +75,9 @@ if __name__ == "__main__":
     db.build_views(conn)
     margins = margin_audit(conn)
     assert any(m["flagged"] for m in margins), "B scenario should flag high take rate"
+    rows = schain_audit(conn)
+    assert rows and len(rows[0]) == 7, f"schain row shape: {len(rows[0]) if rows else 0} cols, flag must be idx 6"
+    assert any(r[6] != "ok" for r in rows), "B scenario should produce schain flags"
     score = spo_score(0.20, 150, 3)
     assert 0 <= score <= 100
-    print(f"ok: margins={len(margins)}, sample_score={score}")
+    print(f"ok: margins={len(margins)}, schain_rows={len(rows)}, sample_score={score}")

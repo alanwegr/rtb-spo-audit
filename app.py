@@ -31,7 +31,7 @@ conn = load(scenario, n_auctions, int(seed))
 margins = pd.DataFrame(validator.margin_audit(conn))
 dup = validator.duplication_audit(conn)
 schain_rows = validator.schain_audit(conn)
-unverified = sum(1 for r in schain_rows if r[7] in ("unverified", "unknown_seller", "unauthorized_reseller"))
+unverified = sum(1 for r in schain_rows if r[6] in ("unverified", "unknown_seller", "unauthorized_reseller"))
 
 kpi_row([
     ("Avg Take Rate", f"{(margins['avg_take_rate'].mean() * 100):.1f}%",
