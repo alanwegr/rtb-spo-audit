@@ -3,10 +3,14 @@ services:
     build: .
     image: rtb-spo-audit
     container_name: rtb-spo-audit
-    ports:
-      - "127.0.0.1:8501:8501"
+    restart: unless-stopped
     deploy:
       resources:
         limits:
           memory: 500M
-    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.spo.rule=Host(`spo.alanwegrzyn.com`)"
+      - "traefik.http.routers.spo.entrypoints=websecure"
+      - "traefik.http.routers.spo.tls.certresolver=mytlschallenge"
+      - "traefik.http.services.spo.loadbalancer.server.port=8501"
